@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
  * verbatim, plus excerpts of /large-scale-project-track-record/ and /test-report-verification/ (full articles live under
  * /blog/). Image text: media__1780388543486-3 (하이앤드 듀얼 흐름도 → /img/evidence-dual-system.webp), large_project_1/2
  * (= /old/projects-1/2.webp), the certificate scans (/img/proof-*.webp, same as components/Proof.tsx).
- * - "지난 24년간" / "지난 17년간" (old /nst-evidence/) are written "20년간" — the company standardised on 20년 (CONTEXT.md).
+ * - Keep the original "지난 24년간" / "지난 17년간" in their respective passages.
  * - Left to /blog/nst-evidence/: the KCL two-row table and the rounded K아파트 figures (same data in the 통합 문서 below).
  * - The project list keeps the 단지 stated in text; 경성하늘샵 appears only as image text (count/발주처 differ between images).
  * - FITI 확인결과서 number ↔ product pairing is inconsistent on the source board, so the three are shown as a set.
@@ -330,7 +330,7 @@ export default function EvidencePage() {
       pageType="CollectionPage"
       lead={
         <>
-          <p>㈜엔에스티는 지난 20년간 실내공기질 개선 기술 연구에 매진해 온 실내공기질 관리 전문 기업입니다.</p>
+          <p>㈜엔에스티는 지난 24년간 실내공기질 개선 기술 연구에 매진해 온 실내공기질 관리 전문 기업입니다.</p>
           <p>
             새집증후군의 원인 중 하나인 새 가구와 마감재에서 방출되는 포름알데히드(HCHO)와 톨루엔 등은 단기간에 사라지지 않습니다. 환기나 일시적인
             베이크아웃(Bake-out)과 함께, 지속적으로 방출되는 유해물질을 관리할 수 있는 근본적인 대책이 필요합니다.
@@ -357,7 +357,7 @@ export default function EvidencePage() {
         id="summary"
         kicker="공식 증빙"
         title="공인 기관이 검증하고 대형 건설사가 채택한 기술력"
-        intro={<p>㈜엔에스티는 지난 20년간 실내공기질 개선 기술 연구에 매진해 온 환경부 인증 전문기업입니다.</p>}
+        intro={<p>㈜엔에스티는 지난 17년간 실내공기질 개선 기술 연구에 매진해 온 환경부 인증 전문기업입니다.</p>}
       >
         <ul className="grid gap-3 md:grid-cols-3">
           {[

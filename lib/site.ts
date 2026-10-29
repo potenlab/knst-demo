@@ -6,7 +6,7 @@ export const SITE = {
   brand: "NST공법",
   title: "새집증후군 시공 NST공법 | VOCs·포름알데히드 3단계 개선 | (주)엔에스티",
   shortTitle: "새집증후군 시공 NST공법 | (주)엔에스티",
-  /* Old-site wording: home intro sentence + the home counters (누적 시공량 60,000건+ / 전국 지점 30개+ / 업력 20년)
+  /* Old-site wording: home intro sentence + the home counters (누적 시공량 60,000건+ / 전국 지점 30개+ / 업력 24년)
      + "대형건설사 전세대 일괄시공 실적" (새집증후군3 infographic). */
   description:
     "NST공법은 휘발성유기화합물(VOCs), 포름알데하이드 등 실내공간에서 보이지 않는 유해물질을 차단·분해·흡착 제거해 주는 새집증후군 개선 시공 기술입니다. 누적 시공량 60,000건+, 전국 지점 30개+, 대형건설사 전세대 일괄시공 실적의 (주)엔에스티.",
@@ -45,4 +45,6 @@ export const SITE = {
   foundingDate: "2009-07",
   /** 회사 공개 자료(이미지) 표기: "NST공법 20년 경력 노하우" */
   experienceYears: 20,
+  /** Original homepage counter. Keep its wording distinct from the 20-year recruitment poster. */
+  homepageExperienceYears: 24,
 } as const;

@@ -18,11 +18,11 @@ const RINGS = [
 ];
 
 /* Old home counter block "(주)엔에스티의 NST공법 시공 실적과 전국 네트워크": 누적 시공량 60,000건+ / 전국 지점 30개+ /
-   업력 (old counter 24년 → the company's standard "20년", see YEAR_FIXES in scripts/import-old-site.mjs). */
+   업력 (24년 on the old homepage; the recruitment poster separately says 20년). */
 const STATS = [
   { label: "누적 시공량", to: 60000, suffix: "건+", lead: true },
   { label: "전국 지점", to: 30, suffix: "개+", lead: false },
-  { label: "업력", to: SITE.experienceYears, suffix: "년", lead: false },
+  { label: "업력", to: SITE.homepageExperienceYears, suffix: "년", lead: false },
 ];
 
 /* Verbatim fragments of the old home (새집증후군3 infographic, OUR Difference, 그림16-1 gallery slide). */

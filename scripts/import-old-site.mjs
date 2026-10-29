@@ -9,6 +9,7 @@
  *         docs/reference/old-site/images/         (+ docs/reference/assets/images-extra as a fallback)
  * Writes  migrations/0007_import_old_site.sql     (INSERT OR IGNORE, one statement per post)
  *         migrations/0008_restore_board_content.sql (guarded UPDATEs, see "0008" below)
+ *         migrations/0009_restore_omitted_articles.sql (original pages previously redirected elsewhere)
  *         public/old/<name>.webp                  (body images, ≤1600px wide, WebP via python3 + Pillow)
  *         docs/reference/old-site/url-map.json    (old URL → new path, for redirects)
  *
@@ -35,7 +36,7 @@
  *   edited in the admin). Re-running is a no-op.
  *
  * Content rules: only what the archive holds. Edits are limited to conversion artefacts, repeated
- * boilerplate and the experience-years rule (see YEAR_FIXES); every one is printed in the report.
+ * formatting. The legacy v1 output is frozen; v2 preserves the archive's wording and year counts.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -56,6 +57,7 @@ const OUT_MAP = path.join(REF, "old-site/url-map.json");
 const SEED_SQL = path.join(ROOT, "migrations/0002_seed_columns.sql");
 const SEED_HTML_SQL = path.join(ROOT, "migrations/0004_convert_seed_to_html.sql");
 const OUT_FIX_SQL = path.join(ROOT, "migrations/0008_restore_board_content.sql");
+const OUT_EXTRA_SQL = path.join(ROOT, "migrations/0009_restore_omitted_articles.sql");
 const TRANSCRIPT_FILES = [path.join(REF, "old-site/image-text.md"), ...[1, 2, 3, 4].map((n) => path.join(REF, `image-text/part-${n}.md`))];
 const MAX_IMG_WIDTH = 1600;
 const D1_MAX_STATEMENT = 100_000; // bytes
@@ -85,8 +87,8 @@ const LIBRARY_PAGE_IDS = new Set([4438, 4439, 4441, 4442, 4443, 4444, 4445, 4446
 const DUPLICATE_OF = { 4582: 4754, 4584: 4756 };
 
 /**
- * Experience years: the company states 20년 (lib/site.ts experienceYears). Dated history ("2008년부터")
- * stays as written; an undated "N년" experience claim that is not 20 becomes 20.
+ * Legacy v1 transformations, retained solely to reproduce the already-applied 0007 migration.
+ * v2 restores the original title/body; historical articles must keep their original year counts.
  */
 const YEAR_FIXES = [
   { id: 5421, field: "title", from: "연구 외길 18년의 진솔한 이야기", to: "연구 외길 20년의 진솔한 이야기" },
@@ -674,8 +676,10 @@ function cleanMarkdown(md, entry) {
   s = s.replace(/^[ \u00A0]+- (?=\S)/gm, "- ").replace(/^(- .*)\n\n(?=- )/gm, "$1\n");
 
   // repeated guide-template boilerplate
-  s = s.replace(/^🏆 2025 대한민국환경대상 본상 수상 기업[ \t]*$/gm, "");
-  s = s.replace(/^환영합니다\. 이 문서는 .*프리미엄 가이드입니다\.[ \t]*$/gm, "");
+  if (!v2) {
+    s = s.replace(/^🏆 2025 대한민국환경대상 본상 수상 기업[ \t]*$/gm, "");
+    s = s.replace(/^환영합니다\. 이 문서는 .*프리미엄 가이드입니다\.[ \t]*$/gm, "");
+  }
   s = s.replace(/^#{2,6} 🎥 \(주\)엔에스티 공식 영상 레퍼런스[ \t]*$/gm, ""); // video embeds were not archived
   // v1 dropped the "증명 자료" gallery with its heading; v2 keeps it (see EXCLUDED_IMAGE_V2)
   if (!v2) s = s.replace(new RegExp(String.raw`^#{2,6} 🏆 조작할 수 없는 객관적 증명 자료[ \t]*\n+(?:(?:${imgMd})+\\?[ \t]*\n?)+`, "gm"), "");
@@ -708,7 +712,7 @@ function cleanMarkdown(md, entry) {
   }
   s = lines.join("\n");
 
-  for (const fx of YEAR_FIXES.filter((f) => f.id === entry.id && f.field === "body")) s = applyFix(s, fx, entry);
+  if (!v2) for (const fx of YEAR_FIXES.filter((f) => f.id === entry.id && f.field === "body")) s = applyFix(s, fx, entry);
 
   // **bold** next to Hangul (e.g. "**NST공법(…)**으로") fails CommonMark's flanking rules and would
   // print the asterisks — mark the pairs here and turn them into <strong> after micromark.
@@ -940,6 +944,18 @@ for (const item of imports) {
 // 0008 (v2): the 자료실 pages in full, and every imported post again under the v2 rules
 const fixReport = { changes: [], links: [], images: [], unresolved: [] };
 const v2Scratch = { changes: [], links: [], images: [], unresolved: [] }; // v2 re-renders repeat v1's report lines
+// These originals have distinct bodies, even when their titles/topics overlap another article.
+const extras = files.map(parseFile).filter((e) =>
+  (e.file.startsWith("page-") && e.id >= 5528 && e.id <= 5538) ||
+  (e.file.startsWith("post-") && Object.hasOwn(DUPLICATE_OF, e.id))
+).map((e) => ({ ...e, kind: e.file.startsWith("page-") ? "library" : "post", mode: "v2",
+  category: "guide", slug: oldSlug(e.url), newPath: `/blog/${encodeURIComponent(oldSlug(e.url))}/`, report: fixReport }));
+const ctxV2 = { slugMap: new Map(slugMap) };
+for (const e of extras) {
+  if (usedSlugs.has(e.slug)) throw new Error(`Omitted article slug already used: ${e.slug}`);
+  usedSlugs.add(e.slug);
+  ctxV2.slugMap.set(oldSlug(e.url), e.newPath);
+}
 const checkArtefacts = (item, html) => {
   const artefact = /.{0,60}(?:\[TABLE\]|knst\.co\.kr\/wp-content|\\\n|\*\*).{0,60}/.exec(html);
   if (artefact) throw new Error(`${item.file}: conversion left an artefact: ${artefact[0]}`);
@@ -949,16 +965,24 @@ const library = entries
   .filter((e) => e.kind === "seeded")
   .map((e) => {
     const item = { ...e, kind: "library", mode: "v2", slug: oldSlug(e.url), report: fixReport };
-    item.html = toHtml(cleanMarkdown(item.body, item), item, ctx);
+    item.html = toHtml(cleanMarkdown(item.body, item), item, ctxV2);
     item.excerpt = excerptOf(item.html);
     checkArtefacts(item, item.html);
     return item;
   });
 for (const item of imports) {
-  const v2item = { ...item, mode: "v2", report: v2Scratch };
-  item.html2 = toHtml(cleanMarkdown(item.body, v2item), v2item, ctx);
+  const v2item = { ...item, title: parseFile(item.file).title, mode: "v2", report: v2Scratch };
+  item.title2 = v2item.title;
+  item.html2 = toHtml(cleanMarkdown(item.body, v2item), v2item, ctxV2);
   checkArtefacts(item, item.html2);
 }
+for (const item of extras) {
+  item.html = toHtml(cleanMarkdown(item.body, item), item, ctxV2);
+  item.excerpt = excerptOf(item.html);
+  checkArtefacts(item, item.html);
+}
+const missingImages = [...fixReport.unresolved, ...v2Scratch.unresolved];
+if (missingImages.length) throw new Error(`Restore would omit archived images:\n${missingImages.join("\n")}`);
 
 // images (writes public/old) → width/height on every <img>
 const dims = convertImages();
@@ -975,6 +999,7 @@ for (const item of imports) {
   item.html2 = withDims(item, item.html2);
 }
 for (const item of library) item.html = withDims(item, item.html);
+for (const item of extras) item.html = withDims(item, item.html);
 for (const [name, src] of [...imageJobs.entries()].sort()) report.images.push(`public/old/${name} ← ${path.relative(ROOT, src)}`);
 
 /* ───────────────────────── SQL ───────────────────────── */
@@ -1025,6 +1050,7 @@ const fix = [
   "--    body image, source_url dropped (it pointed at the old address, which now redirects to the post). Slug, category,",
   "--    published_at unchanged.",
   "-- 2) Imported posts (0007): images the import had dropped come back; cover_image = first body image (≥ 300 px wide).",
+  "--    Original titles, wording and year counts are retained; existing published slugs remain stable.",
   "-- Every UPDATE is guarded — it only matches a row that still holds exactly what 0002/0004/0007 wrote — so a post edited",
   "-- in the admin is never overwritten and re-running is a no-op. The images live in public/old/: deploy them first.",
   "",
@@ -1052,10 +1078,10 @@ for (const i of imports) {
   const before = imgSrcs(i.html);
   const after = imgSrcs(i.html2);
   const cover = coverOf(i.html2);
-  const changed = i.html2 !== i.html;
+  const changed = i.html2 !== i.html || i.title2 !== i.title;
   if (!changed && !cover) continue;
   const t = iso(i.date);
-  const set = changed ? `content_html = ${q(i.html2)}, cover_image = ${q(cover)}, updated_at = ${q(FIX_TIME)}` : `cover_image = ${q(cover)}`;
+  const set = changed ? `title = ${q(i.title2)}, excerpt = ${q(excerptOf(i.html2))}, content_html = ${q(i.html2)}, cover_image = ${q(cover)}, updated_at = ${q(FIX_TIME)}` : `cover_image = ${q(cover)}`;
   pushFix(
     `${i.file} → ${decodeURI(i.newPath)}`,
     `UPDATE posts SET ${set}\n  WHERE slug = ${q(i.slug)} AND updated_at = ${q(t)} AND cover_image IS NULL AND content_html = ${q(i.html)};`,
@@ -1067,17 +1093,42 @@ for (const i of imports) {
 }
 fs.writeFileSync(OUT_FIX_SQL, fix.join("\n"));
 
+const extraSql = ["-- Original articles omitted by the first import. Generated by scripts/import-old-site.mjs.",
+  "-- Preserve each original title, date and body. Existing/admin-authored rows are never overwritten."];
+for (const i of extras) {
+  const t = iso(i.date);
+  const stmt = `INSERT OR IGNORE INTO posts (slug, title, excerpt, content_md, content_html, cover_image, category, status, source_url, published_at, created_at, updated_at) VALUES\n` +
+    `(${q(i.slug)}, ${q(i.title)}, ${q(i.excerpt)}, '', ${q(i.html)}, ${q(coverOf(i.html))}, 'guide', 'published', NULL, ${q(t)}, ${q(t)}, ${q(FIX_TIME)});`;
+  if (Buffer.byteLength(stmt) > D1_MAX_STATEMENT) throw new Error(`${i.file}: statement exceeds D1's 100 KB limit`);
+  extraSql.push(`-- ${i.file}`, stmt, "");
+}
+fs.writeFileSync(OUT_EXTRA_SQL, extraSql.join("\n"));
+
 // old URL → new path (for redirects)
 const urlMap = {};
 for (const e of entries) {
   const kept = e.kind === "seeded" ? e.newPath : (imports.find((i) => i.file === e.file)?.newPath ?? slugMap.get(oldSlug(e.url)));
   if (e.url && kept) urlMap[e.url] = kept;
 }
+for (const e of extras) urlMap[e.url] = e.newPath;
 fs.writeFileSync(OUT_MAP, `${JSON.stringify(Object.fromEntries(Object.entries(urlMap).sort(([a], [b]) => a.localeCompare(b))), null, 2)}\n`);
+
+// Preserve existing hand-mapped static routes; only replace the omitted articles' redirects.
+const redirectsPath = path.join(ROOT, "lib/old-redirects.json");
+const redirects = JSON.parse(fs.readFileSync(redirectsPath, "utf8"));
+for (const e of extras) {
+  const source = new URL(e.url).pathname.replace(/\/$/, "");
+  for (const key of Object.keys(redirects)) {
+    if (decodeURIComponent(key) === decodeURIComponent(source)) redirects[key] = e.newPath;
+  }
+  redirects[source] = e.newPath;
+}
+fs.writeFileSync(redirectsPath, `${JSON.stringify(redirects, null, 2)}\n`);
 
 /* ───────────────────────── report ───────────────────────── */
 
 console.log(`wrote ${path.relative(ROOT, OUT_SQL)} — ${imports.length} posts`, counts);
+console.log(`wrote ${path.relative(ROOT, OUT_EXTRA_SQL)} — ${extras.length} original articles`);
 console.log(`wrote ${Object.keys(dims).length} images to ${path.relative(ROOT, OUT_IMG)}/, ${Object.keys(urlMap).length} URLs to ${path.relative(ROOT, OUT_MAP)}`);
 for (const [k, v] of Object.entries(report)) {
   if (!v.length) continue;
