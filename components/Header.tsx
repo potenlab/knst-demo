@@ -209,7 +209,7 @@ export default function Header() {
           </a>
 
           {/* desktop nav */}
-          <nav ref={navRef} aria-label="주요 메뉴" className="hidden xl:ml-auto xl:block">
+          <nav ref={navRef} aria-label="주요 메뉴" className="hidden xl:absolute xl:left-1/2 xl:top-1/2 xl:block xl:-translate-x-1/2 xl:-translate-y-1/2">
             <ul className="flex items-center gap-0.5">
               {NAV.map((item, index) => {
                 const expanded = submenu === item.label;
@@ -274,7 +274,7 @@ export default function Header() {
             </ul>
           </nav>
 
-          <div className="ml-auto flex shrink-0 items-center gap-2 xl:ml-3">
+          <div className="ml-auto flex shrink-0 items-center gap-2">
             <a
               href="tel:043-222-2322"
               className="hidden h-11 items-center gap-2 rounded-full px-3 text-[15px] font-semibold tabular-nums text-pine outline-none transition-colors hover:bg-pine/[.06] focus-visible:ring-3 focus-visible:ring-trust/40 2xl:inline-flex"
