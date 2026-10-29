@@ -1,0 +1,55 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "knst-demo",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  // vinext's App Router handler behind the public page cache (worker/page-cache.ts)
+  "main": "./worker/index.ts",
+  "assets": { "not_found_handling": "none", "binding": "ASSETS" },
+  "workers_dev": true,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "knst.co.kr", "custom_domain": true },
+    { "pattern": "www.knst.co.kr", "custom_domain": true }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "knst-demo-db",
+      "database_id": "419e33aa-d46a-49c0-a0a2-d4395d50e554",
+      "migrations_dir": "migrations"
+    }
+  ],
+  // Workers Cache only on the CachedPages entrypoint (public pages). The default entrypoint (gateway,
+  // admin, API, media) stays uncached, so admin/API responses can never be served from the cache.
+  "exports": {
+    "default": { "type": "worker", "cache": { "enabled": false } },
+    "CachedPages": { "type": "worker", "cache": { "enabled": true } }
+  },
+  // Worker version id → part of the page ETag (a deploy never revalidates against old HTML)
+  "version_metadata": { "binding": "CF_VERSION_METADATA" },
+
+  "env": {
+    // Staging: workers.dev only, its own D1 copy. Build with CLOUDFLARE_ENV=staging.
+    // `routes` is inheritable, so it MUST stay an explicit empty list here (never attach knst.co.kr).
+    "staging": {
+      "name": "knst-demo-staging",
+      "workers_dev": true,
+      "preview_urls": false,
+      "routes": [],
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "knst-demo-staging-db",
+          "database_id": "f80dc23f-ef94-43ae-b6ca-14e6fc33d5ce",
+          "migrations_dir": "migrations"
+        }
+      ],
+      "exports": {
+        "default": { "type": "worker", "cache": { "enabled": false } },
+        "CachedPages": { "type": "worker", "cache": { "enabled": true } }
+      },
+      "version_metadata": { "binding": "CF_VERSION_METADATA" }
+    }
+  }
+}
