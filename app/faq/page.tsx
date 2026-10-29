@@ -176,7 +176,7 @@ export default function FaqPage() {
           {GROUPS.map((g) => (
             <section key={g.id} id={g.id} aria-labelledby={`${g.id}-title`} className="scroll-mt-24">
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b-2 border-pine pb-3">
-                <h2 id={`${g.id}-title`} className="font-display text-[clamp(1.5rem,1.2rem+1vw,2rem)] font-extrabold tracking-[-0.03em] text-pine">
+                <h2 id={`${g.id}-title`} className="font-display text-[clamp(1.375rem,1.1rem+0.8vw,1.75rem)] font-extrabold tracking-[-0.03em] text-pine">
                   {g.title} <span className="font-sans text-[15px] font-semibold tabular-nums text-muted-ink">{g.items.length}</span>
                 </h2>
                 <a href={g.source.href} target="_blank" rel="noopener noreferrer" className={cn("inline-flex min-h-11 items-center rounded px-1 text-[13px] text-muted-ink hover:text-pine", FOCUS)}>

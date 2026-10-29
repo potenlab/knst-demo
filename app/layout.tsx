@@ -26,7 +26,7 @@ const mono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
-  title: { default: SITE.title, template: "%s | (주)엔에스티" },
+  title: { default: SITE.title, template: "%s | 엔에스티" },
   description: SITE.description,
   keywords: [...SITE.keywords],
   applicationName: "NST공법",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ko_KR",
     url: "/",
-    siteName: "(주)엔에스티 NST공법",
+    siteName: "엔에스티 NST공법",
     title: SITE.title,
     description: SITE.description,
   },

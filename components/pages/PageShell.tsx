@@ -147,7 +147,7 @@ export default function PageShell({
                 </p>
                 <h1
                   id="page-title"
-                  className="mt-4 text-balance font-display text-[clamp(1.9rem,1.2rem+2vw,2.75rem)] font-extrabold leading-[1.18] tracking-[-0.035em] text-pine"
+                  className="mt-4 text-balance font-display text-[clamp(1.625rem,1.15rem+1.6vw,2.25rem)] font-extrabold leading-[1.18] tracking-[-0.035em] text-pine"
                 >
                   {title}
                 </h1>

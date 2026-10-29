@@ -142,7 +142,7 @@ export default function Columns() {
 
             <h2
               id="columns-title"
-              className="mt-5 font-display text-[clamp(1.75rem,1.25rem+1.7vw,2.5rem)] font-extrabold leading-[1.1] tracking-[-0.03em] text-pine"
+              className="mt-5 font-display text-[clamp(1.5rem,1.15rem+1.2vw,2rem)] font-extrabold leading-[1.1] tracking-[-0.03em] text-pine"
             >
               <span className="block">시공 전에</span>
               <span className="block">
@@ -154,7 +154,7 @@ export default function Columns() {
             </h2>
 
             <p className="mt-6 max-w-md text-[17px] leading-[1.75] text-muted-ink sm:text-lg">
-              원인부터 공법, 업체를 고르는 기준까지. <span className="whitespace-nowrap">(주)엔에스티가</span> 직접 쓴 칼럼 {TOTAL}편을 읽는 순서대로
+              원인부터 공법, 업체를 고르는 기준까지. <span className="whitespace-nowrap">엔에스티가</span> 직접 쓴 칼럼 {TOTAL}편을 읽는 순서대로
               묶었습니다.
             </p>
 

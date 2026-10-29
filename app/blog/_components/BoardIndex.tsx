@@ -44,12 +44,12 @@ export async function boardMetadata(section: Section, page: number): Promise<Met
       type: "website",
       locale: "ko_KR",
       url: canonical,
-      siteName: "(주)엔에스티 NST공법",
-      title: `${title} | (주)엔에스티`,
+      siteName: "엔에스티 NST공법",
+      title: `${title} | 엔에스티`,
       description: section.description,
       images: [DEFAULT_OG_IMAGE],
     },
-    twitter: { card: "summary_large_image", title: `${title} | (주)엔에스티`, description: section.description },
+    twitter: { card: "summary_large_image", title: `${title} | 엔에스티`, description: section.description },
   };
 }
 
@@ -127,7 +127,7 @@ export default async function BoardIndex({ section, page, eyebrow }: { section: 
                 </span>
                 {eyebrow}
               </span>
-              <span className="mt-3 block text-[clamp(1.9rem,1.2rem+2vw,2.75rem)] font-extrabold leading-[1.1] tracking-[-0.04em]">
+              <span className="mt-3 block text-[clamp(1.625rem,1.15rem+1.6vw,2.25rem)] font-extrabold leading-[1.1] tracking-[-0.04em]">
                 <span className="bg-[linear-gradient(transparent_62%,#cdeedd_62%,#cdeedd_92%,transparent_92%)] box-decoration-clone">
                   {section.label}
                 </span>
@@ -156,7 +156,7 @@ export default async function BoardIndex({ section, page, eyebrow }: { section: 
       {/* ── List ─────────────────────────────────────────────────────── */}
       <section aria-labelledby={listId} className="mx-auto max-w-[1040px] px-4 pb-16 sm:px-6 sm:pb-20 lg:px-10">
         <div className="flex flex-wrap items-end justify-between gap-3 border-b-2 border-pine pb-4">
-          <h2 id={listId} className="font-display text-[clamp(1.5rem,1.2rem+1vw,2rem)] font-bold leading-tight tracking-[-0.02em] text-pine">
+          <h2 id={listId} className="font-display text-[clamp(1.375rem,1.1rem+0.8vw,1.75rem)] font-bold leading-tight tracking-[-0.02em] text-pine">
             {section.label} 목록
           </h2>
           {total > 0 && (

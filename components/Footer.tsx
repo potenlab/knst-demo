@@ -28,7 +28,7 @@ const PAGE_LINKS = [
   { label: "상담 신청", href: "/#contact" },
 ];
 
-/* Old footer labels: "상호명 : (주)엔에스티 / 대 표 : 장대규 / 주 소 : … / 사업자등록번호 : 301-86-03073" */
+/* Old footer labels: "상호명 : 엔에스티 / 대 표 : 장대규 / 주 소 : … / 사업자등록번호 : 301-86-03073" */
 const COMPANY: [string, string][] = [
   ["상호명", META.name],
   ["대표", META.ceo],
@@ -79,7 +79,7 @@ export default function Footer() {
                 className="size-12 rounded-full object-contain"
               />
               <span className="flex flex-col leading-tight">
-                <span className="font-display text-[17px] font-bold text-pine">(주)엔에스티</span>
+                <span className="font-display text-[17px] font-bold text-pine">엔에스티</span>
                 <span className="text-[12px] font-medium tracking-[0.04em] text-muted-ink">
                   Natural Science&amp;Technology
                 </span>
@@ -193,7 +193,7 @@ export default function Footer() {
         <div className="flex flex-col gap-6 pb-24 pt-8 sm:flex-row sm:items-center sm:justify-between sm:gap-10 lg:pb-28">
           <div className="space-y-1.5 text-[14px] leading-relaxed text-white/55">
             <p>
-              © {year} <span className="whitespace-nowrap">(주)엔에스티</span>. All rights reserved.
+              © {year} <span className="whitespace-nowrap">엔에스티</span>. All rights reserved.
             </p>
             <p>
               <a

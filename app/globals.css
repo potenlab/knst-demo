@@ -175,7 +175,7 @@ body { word-break: keep-all; line-height: 1.7; -webkit-font-smoothing: antialias
 /* ---- post body typography (components/Markdown.tsx) ---- */
 .prose-nst { font-size: 1.0625rem; line-height: 1.85; color: var(--color-ink); }
 .prose-nst > * + * { margin-top: 1.25em; }
-.prose-nst h2 { font-family: var(--font-display); font-weight: 800; font-size: 1.75rem; line-height: 1.3; letter-spacing: -0.02em; margin-top: 2.2em; color: var(--color-pine); }
+.prose-nst h2 { font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; line-height: 1.35; letter-spacing: -0.02em; margin-top: 2.2em; color: var(--color-pine); }
 .prose-nst h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; line-height: 1.4; margin-top: 1.8em; color: var(--color-pine); }
 .prose-nst a { color: var(--color-action); text-decoration: underline; text-underline-offset: 3px; }
 .prose-nst ul, .prose-nst ol { padding-left: 1.4em; } .prose-nst ul { list-style: disc; } .prose-nst ol { list-style: decimal; }

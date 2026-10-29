@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 export const WRAP = "mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-10";
 export const EASE = "ease-[cubic-bezier(.4,0,.2,1)]";
 export const FOCUS = "outline-none focus-visible:ring-2 focus-visible:ring-trust focus-visible:ring-offset-2";
-export const H2 = "font-display text-[clamp(1.5rem,1.2rem+1vw,2rem)] font-extrabold leading-[1.25] tracking-[-0.03em]";
+export const H2 = "font-display text-[clamp(1.375rem,1.1rem+0.8vw,1.75rem)] font-extrabold leading-[1.25] tracking-[-0.03em]";
 export const H3 = "font-display text-[1.125rem] font-bold leading-[1.4] tracking-[-0.02em] sm:text-[1.25rem]";
 export const LINK = "font-semibold text-trust underline decoration-trust/30 underline-offset-4 hover:decoration-trust";
 

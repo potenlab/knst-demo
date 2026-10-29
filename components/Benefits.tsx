@@ -6,7 +6,7 @@ import { RevealSection } from "@/components/Process";
 
 /*
  * Old home, section "새집증후군 개선 업계 현장 시공 표준": intro heading, the "NST공법은 WHY! 특별한가?" board
- * (image 새집증후군3 → bento A/B/C), the "OUR Difference — (주)엔에스티 차별화" icon boxes and the
+ * (image 새집증후군3 → bento A/B/C), the "OUR Difference — 엔에스티 차별화" icon boxes and the
  * "키워드로 보는 NST공법" board (image 새집증후군13). All copy verbatim from docs/reference/old-site/content/
  * page-1227-practice-2.md and the image transcriptions in docs/reference/image-text/part-1..4.md.
  * Reveal is one-shot via <RevealSection> (IntersectionObserver, transform/opacity only).
@@ -136,7 +136,7 @@ const ONESTOP_POINTS = [
   },
 ];
 
-/** Old home "OUR Difference — (주)엔에스티 차별화" (three icon boxes), verbatim. */
+/** Old home "OUR Difference — 엔에스티 차별화" (three icon boxes), verbatim. */
 const DIFFERENCE = [
   { t: "자체생산", d: "제품 연구부터 생산, 판매까지 원-스탑(One-Stop)", icon: "/img/icon-inhouse.webp" },
   { t: "안전성 확보", d: "생활화학제품 안전성 합격, 환경부 신고 완료", icon: "/img/icon-safety.webp" },
@@ -221,7 +221,7 @@ export default function Benefits() {
               data-reveal=""
               className={cn(
                 REVEAL,
-                "mt-5 text-balance font-display text-[clamp(1.75rem,1.25rem+1.7vw,2.5rem)] font-extrabold leading-[1.2] tracking-[-.03em] text-pine",
+                "mt-5 text-balance font-display text-[clamp(1.5rem,1.15rem+1.2vw,2rem)] font-extrabold leading-[1.2] tracking-[-.03em] text-pine",
               )}
               style={{ transitionDelay: "80ms" }}
             >
@@ -301,7 +301,7 @@ export default function Benefits() {
               </div>
 
               <div className="relative z-10 mt-auto lg:pt-56">
-                <h3 className="font-display text-[34px] font-black leading-[1] tracking-[-.04em] sm:text-[42px] lg:text-[52px]">
+                <h3 className="font-display text-[28px] font-black leading-[1.15] tracking-[-.04em] sm:text-[34px] lg:text-[40px]">
                   원스톱
                   <br />
                   시스템
@@ -411,7 +411,7 @@ export default function Benefits() {
           </Tile>
         </ul>
 
-        {/* ---------- OUR Difference — (주)엔에스티 차별화 (old home icon boxes) ---------- */}
+        {/* ---------- OUR Difference — 엔에스티 차별화 (old home icon boxes) ---------- */}
         <div className="mt-20 sm:mt-24 lg:mt-28">
           <div data-reveal="" className={cn(REVEAL, "flex flex-col items-start gap-2")}>
             <p className="inline-flex items-center gap-3 text-[13px] font-semibold uppercase tracking-[.22em] text-pine-2">
@@ -419,7 +419,7 @@ export default function Benefits() {
               OUR Difference
             </p>
             <h3 className="font-display text-[clamp(1.375rem,1.1rem+1vw,1.75rem)] font-extrabold leading-[1.25] tracking-[-.03em] text-pine">
-              (주)엔에스티 차별화
+              엔에스티 차별화
             </h3>
           </div>
           <ul className="mt-8 grid gap-4 sm:gap-5 md:grid-cols-3">

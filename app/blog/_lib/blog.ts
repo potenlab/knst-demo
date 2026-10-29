@@ -13,7 +13,7 @@ export const PAGE_SIZE = 12;
 
 export const BLOG_TITLE = "블로그 · 새집증후군 칼럼·가이드";
 export const BLOG_DESCRIPTION =
-  "새집증후군의 원인과 포름알데히드·VOCs, NST공법 3단계 시공, 업체를 고르는 기준까지. (주)엔에스티가 직접 쓴 새집증후군 칼럼과 실내공기질 가이드를 모았습니다.";
+  "새집증후군의 원인과 포름알데히드·VOCs, NST공법 3단계 시공, 업체를 고르는 기준까지. 엔에스티가 직접 쓴 새집증후군 칼럼과 실내공기질 가이드를 모았습니다.";
 
 /**
  * Pages set `alternates` themselves, which replaces the layout's — so every blog page passes this too.
@@ -47,7 +47,7 @@ export const LD_SITE = {
   publisher: { "@id": LD_ID.org },
 };
 
-export const DEFAULT_OG_IMAGE = { url: "/opengraph-image.png", width: 1200, height: 630, alt: "(주)엔에스티 NST공법" };
+export const DEFAULT_OG_IMAGE = { url: "/opengraph-image.png", width: 1200, height: 630, alt: "엔에스티 NST공법" };
 
 /** Site-relative path of a blog post. Slugs may contain Hangul, so the segment is percent-encoded. */
 export const postPath = (slug: string) => `${BLOG_PATH}${encodeURIComponent(slug)}/`;
@@ -102,7 +102,7 @@ export const SECTIONS: Record<SectionKey, Section> = {
     categories: ["notice"],
     ldType: "BlogPosting",
     title: "공지사항",
-    description: "(주)엔에스티 공지사항. NST공법 신규 사업자 모집, 공식 시공업체 알림, 입주시장 전문업체와의 계약 소식을 알려 드립니다.",
+    description: "엔에스티 공지사항. NST공법 신규 사업자 모집, 공식 시공업체 알림, 입주시장 전문업체와의 계약 소식을 알려 드립니다.",
     backLabel: "공지사항 목록",
     relatedTitle: "다른 공지사항",
   },
@@ -113,7 +113,7 @@ export const SECTIONS: Record<SectionKey, Section> = {
     categories: ["news"],
     ldType: "NewsArticle",
     title: "언론동향",
-    description: "(주)엔에스티와 NST공법을 다룬 기사 모음. 2025 대한민국환경대상 환경제품 부문 본상 수상, ‘하이앤드 듀얼’ 신제품 3종 출시, 전국 신규사업자 모집 소식과 원문 기사 링크.",
+    description: "엔에스티와 NST공법을 다룬 기사 모음. 2025 대한민국환경대상 환경제품 부문 본상 수상, ‘하이앤드 듀얼’ 신제품 3종 출시, 전국 신규사업자 모집 소식과 원문 기사 링크.",
     backLabel: "언론동향 목록",
     relatedTitle: "다른 기사",
   },

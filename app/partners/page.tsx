@@ -135,7 +135,7 @@ export default function PartnersPage() {
 
       <Section id="directory" tone="white" kicker="업체현황" title="지역별 시공업체">
         <PartnerDirectory />
-        <SourceNote>출처: (주)엔에스티 시공업체 현황 ({PARTNERS_DATE} 기준). 업체명·대표자·소재지·연락처·품목은 원문 그대로입니다.</SourceNote>
+        <SourceNote>출처: 엔에스티 시공업체 현황 ({PARTNERS_DATE} 기준). 업체명·대표자·소재지·연락처·품목은 원문 그대로입니다.</SourceNote>
       </Section>
 
       {/* ── 공식 업체 확인 ── */}
@@ -164,7 +164,7 @@ export default function PartnersPage() {
             ))}
           </ol>
           <p className="mt-5 text-[16px] font-medium leading-[1.7] text-pine">고객님의 안전한 선택을 위해 반드시 공식 홈페이지 시공업체를 확인해주세요.</p>
-          <SourceNote>출처: (주)엔에스티 공지사항 「[공식]새집증후군 개선 NST공법 시공업체 알림」(2025.10.10)</SourceNote>
+          <SourceNote>출처: 엔에스티 공지사항 「[공식]새집증후군 개선 NST공법 시공업체 알림」(2025.10.10)</SourceNote>
         </div>
       </Section>
 
@@ -178,7 +178,7 @@ export default function PartnersPage() {
           <>
             <p>(많은 관심 바랍니다.)</p>
             <p>
-              (주)엔에스티는 새집증후군 개선 전문회사로 20년 노하우가 집약된 새집증후군 개선 시공 방법인 NST공법을 개발한 회사입니다. 국민 건강을
+              엔에스티는 새집증후군 개선 전문회사로 20년 노하우가 집약된 새집증후군 개선 시공 방법인 NST공법을 개발한 회사입니다. 국민 건강을
               지키기 위해 함께할 NST공법 시공업체 신규 사업자를 모집합니다.
             </p>
           </>
@@ -265,7 +265,7 @@ export default function PartnersPage() {
           ))}
         </ol>
 
-        <SourceNote dark>출처: (주)엔에스티 신규 사업자 모집 포스터·공지사항 · 국민의 건강을 지키는 친환경 기술 NST공법</SourceNote>
+        <SourceNote dark>출처: 엔에스티 신규 사업자 모집 포스터·공지사항 · 국민의 건강을 지키는 친환경 기술 NST공법</SourceNote>
       </Section>
 
       <PageCTA />

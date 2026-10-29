@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 /*
  * 개인정보처리방침 — archived /terms_page/privacy-policy/ (시행 2024.09.15), old wording kept.
  * Decision: the archived text still carried the WordPress theme's template placeholders (company '십분의일',
- * 책임자 '홍길동', 02-1234-5678, studio.onetenth@gmail.com). Those are NOT published: '회사' is (주)엔에스티 and the
+ * 책임자 '홍길동', 02-1234-5678, studio.onetenth@gmail.com). Those are NOT published: '회사' is 엔에스티 and the
  * 개인정보관리책임자 line shows the company's real phone/e-mail. A named 책임자 must be supplied by the company.
  * Obvious typo fixed: "고개문의" → "고객문의".
  */
@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 const PATH = "/privacy/";
 const TITLE = "개인정보처리방침";
 const DESCRIPTION =
-  "(주)엔에스티 개인정보처리방침 — 수집하는 개인정보 항목, 개인정보의 수집 및 이용목적, 수집 및 보유기간, 자동 수집 장치(쿠키), 개인정보에 관한 민원서비스.";
+  "엔에스티 개인정보처리방침 — 수집하는 개인정보 항목, 개인정보의 수집 및 이용목적, 수집 및 보유기간, 자동 수집 장치(쿠키), 개인정보에 관한 민원서비스.";
 
 export const metadata = pageMetadata({ path: PATH, title: TITLE, description: DESCRIPTION });
 
@@ -34,7 +34,7 @@ export default function PrivacyPage() {
       <article className={cn(WRAP, "pb-20 sm:pb-24")}>
         <div className="max-w-[46rem] rounded-[1.75rem] bg-white p-6 ring-1 ring-hairline sm:p-10">
           <p className="text-[16px] leading-[1.85] text-ink/85">
-            ‘(주)엔에스티’ 는 (이하 ‘회사’는) 고객님의 개인정보를 중요시하며, “정보통신망 이용촉진 및 정보보호”에 관한 법률을 준수하고 있습니다.
+            ‘엔에스티’ 는 (이하 ‘회사’는) 고객님의 개인정보를 중요시하며, “정보통신망 이용촉진 및 정보보호”에 관한 법률을 준수하고 있습니다.
           </p>
           <p className={P}>
             회사는 개인정보취급방침을 통하여 고객님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가
@@ -71,7 +71,7 @@ export default function PrivacyPage() {
           </p>
           <dl className="mt-4 grid grid-cols-[minmax(0,auto)_minmax(0,1fr)] gap-x-4 gap-y-2 rounded-[1.25rem] bg-air px-5 py-4 text-[16px] leading-[1.7]">
             <dt className="font-semibold text-muted-ink">개인정보관리책임자</dt>
-            <dd>(주)엔에스티</dd>
+            <dd>엔에스티</dd>
             <dt className="font-semibold text-muted-ink">전화번호</dt>
             <dd>
               <a href="tel:0432222322" className={cn(LINK, FOCUS, "rounded tabular-nums")}>

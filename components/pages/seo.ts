@@ -11,10 +11,10 @@ export const LD_ID = {
 
 export const abs = (path: string) => `${SITE.url}${path}`;
 
-const OG_IMAGE = { url: "/opengraph-image.png", width: 1200, height: 630, alt: "(주)엔에스티 NST공법" };
+const OG_IMAGE = { url: "/opengraph-image.png", width: 1200, height: 630, alt: "엔에스티 NST공법" };
 
 export function pageMetadata({ path, title, description }: { path: string; title: string; description: string }): Metadata {
-  const full = `${title} | (주)엔에스티`;
+  const full = `${title} | 엔에스티`;
   return {
     title,
     description,
@@ -23,7 +23,7 @@ export function pageMetadata({ path, title, description }: { path: string; title
       type: "website",
       locale: "ko_KR",
       url: path,
-      siteName: "(주)엔에스티 NST공법",
+      siteName: "엔에스티 NST공법",
       title: full,
       description,
       images: [OG_IMAGE],

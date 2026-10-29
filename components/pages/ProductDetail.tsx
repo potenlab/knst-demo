@@ -641,7 +641,7 @@ export default function ProductDetail({ slug }: { slug: Slug }) {
 
       {/* ── 인증 · 다른 제품 ── */}
       <section aria-labelledby="certs-title" className={cn(WRAP, "py-14 sm:py-20")}>
-        <h2 id="certs-title" className="font-display text-[clamp(1.5rem,1.2rem+1vw,2rem)] font-extrabold leading-[1.25] tracking-[-0.03em] text-pine">
+        <h2 id="certs-title" className="font-display text-[clamp(1.375rem,1.1rem+0.8vw,1.75rem)] font-extrabold leading-[1.25] tracking-[-0.03em] text-pine">
           인증·특허
         </h2>
         <ul className="mt-6 grid gap-3 md:grid-cols-2">

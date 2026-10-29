@@ -78,12 +78,12 @@ export async function generateMetadata({ searchParams }: { searchParams: SearchP
       type: "website",
       locale: "ko_KR",
       url: canonical,
-      siteName: "(주)엔에스티 NST공법",
-      title: `${title} | (주)엔에스티`,
+      siteName: "엔에스티 NST공법",
+      title: `${title} | 엔에스티`,
       description: BLOG_DESCRIPTION,
       images: [DEFAULT_OG_IMAGE],
     },
-    twitter: { card: "summary_large_image", title: `${title} | (주)엔에스티`, description: BLOG_DESCRIPTION },
+    twitter: { card: "summary_large_image", title: `${title} | 엔에스티`, description: BLOG_DESCRIPTION },
   };
 }
 
@@ -109,7 +109,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams: Se
         "@type": "Blog",
         "@id": LD_ID.blog,
         url: `${SITE.url}${BLOG_PATH}`,
-        name: "(주)엔에스티 블로그",
+        name: "엔에스티 블로그",
         description: BLOG_DESCRIPTION,
         inLanguage: "ko-KR",
         publisher: { "@id": LD_ID.org },
@@ -166,7 +166,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams: Se
                 </span>
                 블로그
               </span>
-              <span className="mt-3 block text-[clamp(1.9rem,1.2rem+2vw,2.75rem)] font-extrabold leading-[1.1] tracking-[-0.04em]">
+              <span className="mt-3 block text-[clamp(1.625rem,1.15rem+1.6vw,2.25rem)] font-extrabold leading-[1.1] tracking-[-0.04em]">
                 새집증후군{" "}
                 <span className="bg-[linear-gradient(transparent_62%,#cdeedd_62%,#cdeedd_92%,transparent_92%)] box-decoration-clone">
                   {category === "guide" ? "가이드" : category === "column" ? "칼럼" : "칼럼·가이드"}
@@ -176,7 +176,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams: Se
 
             <div className="border-t border-hairline pt-6 lg:col-span-5 lg:mb-2">
               <p className="max-w-[34rem] text-pretty text-[17px] leading-[1.75] text-muted-ink sm:text-[18px]">
-                원인부터 공법, 업체를 고르는 기준까지. <span className="whitespace-nowrap">(주)엔에스티가</span> 직접 쓴
+                원인부터 공법, 업체를 고르는 기준까지. <span className="whitespace-nowrap">엔에스티가</span> 직접 쓴
                 새집증후군 칼럼과 실내공기질 가이드를 모았습니다.
               </p>
               <p className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-[15px]">

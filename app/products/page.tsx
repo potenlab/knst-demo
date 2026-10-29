@@ -44,7 +44,7 @@ export default function ProductsPage() {
       path={PATH}
       crumbs={[{ label: "제품현황" }]}
       eyebrow="Our Products · 제품현황"
-      title="(주)엔에스티 제품현황"
+      title="엔에스티 제품현황"
       name={TITLE}
       description={DESCRIPTION}
       pageType="CollectionPage"
@@ -64,7 +64,7 @@ export default function ProductsPage() {
       }
     >
       <section aria-labelledby="trio-title" className={cn(WRAP, "pb-4")}>
-        <h2 id="trio-title" className="font-display text-[clamp(1.5rem,1.2rem+1vw,2rem)] font-extrabold leading-[1.25] tracking-[-0.03em] text-pine">
+        <h2 id="trio-title" className="font-display text-[clamp(1.375rem,1.1rem+0.8vw,1.75rem)] font-extrabold leading-[1.25] tracking-[-0.03em] text-pine">
           NST공법 제품 삼총사
         </h2>
         <Figure

@@ -357,7 +357,7 @@ export default function Process() {
               data-reveal=""
               className={cn(
                 REVEAL,
-                "mt-5 text-balance font-display text-[clamp(1.75rem,1.25rem+1.7vw,2.5rem)] font-extrabold leading-[1.15] tracking-[-.04em] text-white",
+                "mt-5 text-balance font-display text-[clamp(1.5rem,1.15rem+1.2vw,2rem)] font-extrabold leading-[1.15] tracking-[-.04em] text-white",
               )}
               style={{ transitionDelay: "80ms" }}
             >

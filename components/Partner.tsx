@@ -185,12 +185,12 @@ export default function Partner() {
             </p>
             <h2
               id="partner-title"
-              className="mt-6 text-balance font-display text-[clamp(1.75rem,1.25rem+1.7vw,2.5rem)] font-extrabold leading-[1.2] tracking-[-0.035em]"
+              className="mt-6 text-balance font-display text-[clamp(1.5rem,1.15rem+1.2vw,2rem)] font-extrabold leading-[1.2] tracking-[-0.035em]"
             >
               국민 건강을 지키기 위해 함께할 NST공법 시공업체 <span className="text-mint">신규 사업자</span>를 모집합니다.
             </h2>
             <p className="mt-6 max-w-[34rem] text-[17px] leading-[1.75] text-white/75 sm:text-[18px]">
-              (주)엔에스티는 새집증후군 개선 전문회사로 20년 노하우가 집약된 새집증후군 개선 시공 방법인 NST공법을 개발한 회사입니다.
+              엔에스티는 새집증후군 개선 전문회사로 20년 노하우가 집약된 새집증후군 개선 시공 방법인 NST공법을 개발한 회사입니다.
             </p>
           </div>
 
@@ -364,7 +364,7 @@ export default function Partner() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/img/g-recruit.webp"
-                alt="(주)엔에스티 2025 전국 신규 사업자 모집 포스터. NST공법 홍보대사 “새집이”, 대한민국 환경대상 환경제품 부문 수상(2025년). 모집부문(물품공급계약): 새집증후군 개선 NST공법 시공 업체. 신청자격(우대): 입주시장 5년 이상 경력 업체, 다(多) 품목 종합업체, 입주박람회 참여 업체. 신청방법: 이메일 isnst@naver.com, 카카오톡 1:1 채팅 QR, 전화 (043)222-2322."
+                alt="엔에스티 2025 전국 신규 사업자 모집 포스터. NST공법 홍보대사 “새집이”, 대한민국 환경대상 환경제품 부문 수상(2025년). 모집부문(물품공급계약): 새집증후군 개선 NST공법 시공 업체. 신청자격(우대): 입주시장 5년 이상 경력 업체, 다(多) 품목 종합업체, 입주박람회 참여 업체. 신청방법: 이메일 isnst@naver.com, 카카오톡 1:1 채팅 QR, 전화 (043)222-2322."
                 width={900}
                 height={1358}
                 loading="lazy"

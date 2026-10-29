@@ -196,7 +196,7 @@ export default function Header() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/img/logo-color.webp"
-              alt="(주)엔에스티 NST"
+              alt="엔에스티 NST"
               width={500}
               height={336}
               className={cn(
@@ -214,7 +214,7 @@ export default function Header() {
               {NAV.map((item, index) => {
                 const expanded = submenu === item.label;
                 const linkClass = cn(
-                  "relative inline-flex h-11 items-center gap-1 whitespace-nowrap rounded-full px-2.5 text-[15px] font-semibold tracking-[-0.01em] outline-none transition-colors duration-300",
+                  "relative inline-flex h-11 items-center gap-1 whitespace-nowrap rounded-full px-2.5 text-[14px] font-semibold tracking-[-0.01em] outline-none transition-colors duration-300",
                   "hover:bg-pine/[.06] hover:text-pine focus-visible:ring-3 focus-visible:ring-trust/40",
                   "after:absolute after:bottom-1.5 after:left-1/2 after:size-[5px] after:-translate-x-1/2 after:rounded-full after:bg-leaf after:transition-[opacity,scale] after:duration-300",
                   isActive(item) ? "text-pine after:scale-100 after:opacity-100" : "text-ink/70 after:scale-0 after:opacity-0",
@@ -254,7 +254,7 @@ export default function Header() {
                                   href={link.href}
                                   onClick={() => setSubmenu(null)}
                                   aria-current={!link.href.includes("#") && samePath(link.href, pathname) ? "page" : undefined}
-                                  className="flex min-h-11 items-center rounded-xl px-3 text-[15px] text-ink/80 outline-none transition-colors hover:bg-mint/50 hover:text-pine focus-visible:ring-2 focus-visible:ring-trust/50 aria-[current=page]:font-bold aria-[current=page]:text-pine"
+                                  className="flex min-h-11 items-center rounded-xl px-3 text-[14px] text-ink/80 outline-none transition-colors hover:bg-mint/50 hover:text-pine focus-visible:ring-2 focus-visible:ring-trust/50 aria-[current=page]:font-bold aria-[current=page]:text-pine"
                                 >
                                   {link.label}
                                 </a>
@@ -277,7 +277,7 @@ export default function Header() {
           <div className="ml-auto flex shrink-0 items-center gap-2">
             <a
               href="tel:043-222-2322"
-              className="hidden h-11 items-center gap-2 rounded-full px-3 text-[15px] font-semibold tabular-nums text-pine outline-none transition-colors hover:bg-pine/[.06] focus-visible:ring-3 focus-visible:ring-trust/40 2xl:inline-flex"
+              className="hidden h-11 items-center gap-2 rounded-full px-3 text-[14px] font-semibold tabular-nums text-pine outline-none transition-colors hover:bg-pine/[.06] focus-visible:ring-3 focus-visible:ring-trust/40 2xl:inline-flex"
             >
               <Phone aria-hidden="true" className="size-4 text-leaf" />
               043-222-2322
@@ -287,7 +287,7 @@ export default function Header() {
               onClick={() => open && close()}
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "h-11 rounded-full bg-action px-5 text-[15px] font-bold text-white shadow-[0_10px_24px_-12px_rgba(0,71,156,.55)] transition-[translate,box-shadow,background-color] duration-300",
+                "h-11 rounded-full bg-action px-5 text-[14px] font-bold text-white shadow-[0_10px_24px_-12px_rgba(0,71,156,.55)] transition-[translate,box-shadow,background-color] duration-300",
                 "hover:-translate-y-0.5 hover:bg-action-hover hover:shadow-[0_16px_30px_-14px_rgba(0,71,156,.7)] focus-visible:ring-ink/30",
                 EASE,
               )}
@@ -357,7 +357,7 @@ export default function Header() {
                     href={item.href}
                     onClick={() => close()}
                     aria-current={isActive(item) ? "page" : undefined}
-                    className="group flex min-h-14 items-center justify-between gap-4 py-2.5 font-display text-[1.375rem] font-bold tracking-[-0.03em] text-pine outline-none focus-visible:bg-mint/40 aria-[current=page]:text-leaf"
+                    className="group flex min-h-14 items-center justify-between gap-4 py-2.5 font-display text-[1.25rem] font-bold tracking-[-0.03em] text-pine outline-none focus-visible:bg-mint/40 aria-[current=page]:text-leaf"
                   >
                     {item.label}
                     <ArrowUpRight aria-hidden="true" className="size-5 text-leaf" />
@@ -370,7 +370,7 @@ export default function Header() {
                             href={link.href}
                             onClick={() => close()}
                             aria-current={!link.href.includes("#") && samePath(link.href, pathname) ? "page" : undefined}
-                            className="flex min-h-11 items-center rounded-lg px-2 text-[16px] text-ink/75 outline-none hover:bg-mint/40 focus-visible:ring-2 focus-visible:ring-trust/50 aria-[current=page]:font-bold aria-[current=page]:text-leaf"
+                            className="flex min-h-11 items-center rounded-lg px-2 text-[15px] text-ink/75 outline-none hover:bg-mint/40 focus-visible:ring-2 focus-visible:ring-trust/50 aria-[current=page]:font-bold aria-[current=page]:text-leaf"
                           >
                             {link.label}
                           </a>
@@ -405,7 +405,7 @@ export default function Header() {
                   key={t.href}
                   href={t.href}
                   onClick={() => close()}
-                  className="flex min-h-12 items-center justify-center gap-2 rounded-2xl border border-hairline bg-white/70 text-[15px] font-semibold tabular-nums text-pine outline-none focus-visible:ring-3 focus-visible:ring-trust/40"
+                  className="flex min-h-12 items-center justify-center gap-2 rounded-2xl border border-hairline bg-white/70 text-[14px] font-semibold tabular-nums text-pine outline-none focus-visible:ring-3 focus-visible:ring-trust/40"
                 >
                   <Phone aria-hidden="true" className="size-4 text-leaf" />
                   {t.label}
@@ -417,7 +417,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => close()}
-              className="mt-2 flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-[#FEE500] text-[15px] font-semibold text-[#191919] outline-none focus-visible:ring-3 focus-visible:ring-trust/40"
+              className="mt-2 flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-[#FEE500] text-[14px] font-semibold text-[#191919] outline-none focus-visible:ring-3 focus-visible:ring-trust/40"
             >
               <KakaoSymbol className="size-[18px]" />
               카카오톡 상담

@@ -70,7 +70,7 @@ export function postMetadata(post: Post | null | undefined): Metadata {
       type: "article",
       locale: "ko_KR",
       url: path,
-      siteName: "(주)엔에스티 NST공법",
+      siteName: "엔에스티 NST공법",
       title: post.title,
       description,
       publishedTime: post.published_at ?? undefined,
@@ -152,7 +152,7 @@ export default async function PostArticle({ post }: { post: Post }) {
         articleSection: label,
         inLanguage: "ko-KR",
         isPartOf: isBlog
-          ? { "@type": "Blog", "@id": LD_ID.blog, name: "(주)엔에스티 블로그", url: sectionUrl }
+          ? { "@type": "Blog", "@id": LD_ID.blog, name: "엔에스티 블로그", url: sectionUrl }
           : { "@type": "CollectionPage", "@id": `${sectionUrl}#webpage`, name: section.label, url: sectionUrl },
         ...(post.source_url ? { isBasedOn: post.source_url } : {}),
       },
@@ -184,7 +184,7 @@ export default async function PostArticle({ post }: { post: Post }) {
 
               <h1
                 id="post-title"
-                className="mt-5 text-pretty font-display text-[clamp(1.625rem,1.2rem+1.8vw,2.25rem)] font-extrabold leading-[1.28] tracking-[-0.03em] text-pine sm:mt-7"
+                className="mt-5 text-pretty font-display text-[clamp(1.5rem,1.1rem+1.4vw,2rem)] font-extrabold leading-[1.28] tracking-[-0.03em] text-pine sm:mt-7"
               >
                 {post.title}
               </h1>
@@ -299,7 +299,7 @@ export default async function PostArticle({ post }: { post: Post }) {
             <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-3 border-b-2 border-pine pb-4">
               <h2
                 id="related-title"
-                className="font-display text-[clamp(1.5rem,1.2rem+1vw,2rem)] font-bold leading-tight tracking-[-0.02em] text-pine"
+                className="font-display text-[clamp(1.375rem,1.1rem+0.8vw,1.75rem)] font-bold leading-tight tracking-[-0.02em] text-pine"
               >
                 {section.relatedTitle}
               </h2>

@@ -5,7 +5,7 @@ import { BLOG_PATH, RSS_PATH, postUrlFor } from "../_lib/blog";
 
 const FEED_TITLE = `${SITE.name} 블로그 · 공지사항 · 언론동향`;
 const FEED_DESCRIPTION =
-  "(주)엔에스티의 새집증후군 칼럼과 실내공기질 가이드, 공지사항, 언론동향. 블로그(/blog/), 공지사항(/notices/), 언론동향(/news/)의 새 글을 한 피드로 받아 보세요.";
+  "엔에스티의 새집증후군 칼럼과 실내공기질 가이드, 공지사항, 언론동향. 블로그(/blog/), 공지사항(/notices/), 언론동향(/news/)의 새 글을 한 피드로 받아 보세요.";
 
 export const dynamic = "force-dynamic";
 

@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 
 /*
  * 회사소개 — old pages /about-nst/ (인사말), /our-vision/ (비전), /history/ (연혁), /directions/ (오시는 길).
- * - 인사말 verbatim from /about-nst/, including the opening line "안녕하십니까, ㈜엔에스티 대표이사 장대규입니다."
- *   (대표 장대규, confirmed by the client 2026-10-29 — see lib/site.ts) and the signature "㈜엔에스티 대표이사 拜上".
+ * - 인사말 verbatim from /about-nst/, including the opening line "안녕하십니까, 엔에스티 대표이사 장대규입니다."
+ *   (대표 장대규, confirmed by the client 2026-10-29 — see lib/site.ts) and the signature "엔에스티 대표이사 拜上".
  * - The 대형배너(2026) board that /about-nst/ showed is reproduced as image + its text.
  * - 연혁: the /history/ list verbatim + dated items from 언론동향/증빙 (marked in the footnote).
  * - Address spelled "세중테크노밸리" as on /directions/, the product labels and lib/site.ts.
@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
 const PATH = "/about/";
 const TITLE = "회사소개 · 인사말·비전·연혁·오시는 길";
 const DESCRIPTION =
-  "㈜엔에스티는 자연과 과학기술(Natural Science&Technology)을 융합하여 건강한 실내공간을 만드는 기업입니다. 대표이사 인사말, 비전, 연혁, 오시는 길.";
+  "엔에스티는 자연과 과학기술(Natural Science&Technology)을 융합하여 건강한 실내공간을 만드는 기업입니다. 대표이사 인사말, 비전, 연혁, 오시는 길.";
 
 /* 대형배너(2026) board text (image-text part-4) */
 const BANNER_POINTS = [
@@ -36,11 +36,11 @@ const ADDRESS = "충북 청주시 흥덕구 공단로 134 세중테크노밸리 
 const MAP_QUERY = encodeURIComponent("충북 청주시 흥덕구 공단로 134");
 
 const FACTS: [string, string][] = [
-  ["상호", "(주)엔에스티 (NST Co., Ltd.)"],
+  ["상호", "엔에스티 (NST Co., Ltd.)"],
   ["대표", SITE.ceo],
   ["설립", "2009년 7월"],
   ["사업자등록번호", "301-86-03073"],
-  ["기업부설연구소", "(주)엔에스티연구소 (2025년 9월 설립)"],
+  ["기업부설연구소", "엔에스티연구소 (2025년 9월 설립)"],
   ["본사", ADDRESS],
 ];
 
@@ -84,7 +84,7 @@ const HISTORY: { year: string; items: { m: string; t: string; extra?: boolean }[
   {
     year: "2025",
     items: [
-      { m: "09", t: "기업부설연구소 (주)엔에스티연구소 설립 완료" },
+      { m: "09", t: "기업부설연구소 엔에스티연구소 설립 완료" },
       { m: "08", t: "NST-S100 리뉴얼 제품 출시" },
       { m: "07", t: "NST-S100·S200·F100 안전기준 적합확인 신고 완료 (한국환경산업기술원)", extra: true },
       { m: "07", t: "제20회 2025 대한민국환경대상 환경제품 부문 본상 수상", extra: true },
@@ -114,7 +114,7 @@ const ORG_EXTRA = {
   slogan: "국민의 건강을 지키는 친환경 기술 NST공법",
   identifier: { "@type": "PropertyValue", propertyID: "사업자등록번호", value: "301-86-03073" },
   award: "제20회 2025 대한민국환경대상 환경제품부문 (대한민국환경대상위원회, 2025-07-18)",
-  subOrganization: { "@type": "Organization", name: "(주)엔에스티연구소", description: "기업부설연구소 (2025년 9월 설립)" },
+  subOrganization: { "@type": "Organization", name: "엔에스티연구소", description: "기업부설연구소 (2025년 9월 설립)" },
 };
 
 export default function AboutPage() {
@@ -137,7 +137,7 @@ export default function AboutPage() {
       ld={[ORG_EXTRA]}
       lead={
         <p>
-          ㈜엔에스티는 자연과 과학기술(Natural Science&amp;Technology)을 융합하여 건강한 실내공간을 만드는 기업입니다. 2009년 창립 이후, 직접
+          엔에스티는 자연과 과학기술(Natural Science&amp;Technology)을 융합하여 건강한 실내공간을 만드는 기업입니다. 2009년 창립 이후, 직접
           연구개발·제조·판매하며 신축 아파트 등 실내공간의 실질적인 공기질 개선 솔루션을 제공해왔습니다.
         </p>
       }
@@ -165,15 +165,15 @@ export default function AboutPage() {
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className={cn("lg:col-span-7", REVEAL)}>
             <p className="font-display text-[1.25rem] font-bold leading-[1.5] tracking-[-0.02em] text-pine sm:text-[1.375rem]">
-              (주)엔에스티는 자체 기술로 실내 공기를 설계합니다.
+              엔에스티는 자체 기술로 실내 공기를 설계합니다.
             </p>
-            <h3 className={cn(H3, "mt-8 text-ink")}>안녕하십니까, ㈜엔에스티 대표이사 장대규입니다.</h3>
+            <h3 className={cn(H3, "mt-8 text-ink")}>안녕하십니까, 엔에스티 대표이사 장대규입니다.</h3>
             <div className="mt-4 space-y-4 text-[16px] leading-[1.85] text-ink/85 sm:text-[17px]">
               {GREETING.map((p) => (
                 <p key={p.slice(0, 16)}>{p}</p>
               ))}
             </div>
-            <p className="mt-8 font-display text-[17px] font-bold text-pine">㈜엔에스티 대표이사 拜上</p>
+            <p className="mt-8 font-display text-[17px] font-bold text-pine">엔에스티 대표이사 拜上</p>
             <blockquote className="mt-8 rounded-r-[1.25rem] border-l-4 border-leaf bg-mint/60 px-5 py-4 font-display text-[17px] font-bold leading-[1.6] text-pine">
               <p>“눈에 보이지 않는 위협으로부터 국민 건강을 지키는 것”</p>
               <footer className="mt-1 font-sans text-[14px] font-medium text-pine-2">— 엔에스티의 사명</footer>
@@ -185,7 +185,7 @@ export default function AboutPage() {
               width={800}
               height={1174}
               zoom
-              alt="‘새집증후군 해결! 원조기술!! 검증된 NST공법’ 배너: 가운데 ‘20년 노하우’ 퍼즐 조각과 아파트 그림, 둘레에 일곱 가지 내용을 아이콘과 함께 배치하고 아래에 가족과 새지비 캐릭터 사진, (주)엔에스티 로고"
+              alt="‘새집증후군 해결! 원조기술!! 검증된 NST공법’ 배너: 가운데 ‘20년 노하우’ 퍼즐 조각과 아파트 그림, 둘레에 일곱 가지 내용을 아이콘과 함께 배치하고 아래에 가족과 새지비 캐릭터 사진, 엔에스티 로고"
             />
           </div>
         </div>
@@ -212,7 +212,7 @@ export default function AboutPage() {
         id="vision"
         tone="white"
         kicker="OUR VISION"
-        title="(주)엔에스티 비전"
+        title="엔에스티 비전"
       >
         <ol className="grid gap-4 sm:grid-cols-2">
           {VISION.map((v) => (
@@ -269,7 +269,7 @@ export default function AboutPage() {
           ))}
         </ol>
         <SourceNote>
-          출처: (주)엔에스티 연혁. * 표시 항목은 언론동향(2025.07.21·2026.01.28 보도)과 공개 증빙서류 기준으로 덧붙였습니다. 등록증 기준 등록일은 서비스표
+          출처: 엔에스티 연혁. * 표시 항목은 언론동향(2025.07.21·2026.01.28 보도)과 공개 증빙서류 기준으로 덧붙였습니다. 등록증 기준 등록일은 서비스표
           제41-0375364호 2016.10.21, 상표 제40-1241651호 2017.03.23입니다. 서류는{" "}
           <a href="/evidence/" className={cn(LINK, FOCUS, "rounded")}>
             시험성적서·시공 실적

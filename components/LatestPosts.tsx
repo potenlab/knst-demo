@@ -45,7 +45,7 @@ export default async function LatestPosts() {
             </p>
             <h2
               id="latest-title"
-              className="mt-4 font-display text-[clamp(1.75rem,1.25rem+1.7vw,2.5rem)] font-extrabold leading-[1.1] tracking-[-0.03em] text-pine"
+              className="mt-4 font-display text-[clamp(1.5rem,1.15rem+1.2vw,2rem)] font-extrabold leading-[1.1] tracking-[-0.03em] text-pine"
             >
               최신 글
             </h2>

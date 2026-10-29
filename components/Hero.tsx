@@ -17,7 +17,7 @@ const RINGS = [
   { size: 272, border: "rgba(14,59,50,.07)", delay: -6.6 },
 ];
 
-/* Old home counter block "(주)엔에스티의 NST공법 시공 실적과 전국 네트워크": 누적 시공량 60,000건+ / 전국 지점 30개+ /
+/* Old home counter block "엔에스티의 NST공법 시공 실적과 전국 네트워크": 누적 시공량 60,000건+ / 전국 지점 30개+ /
    업력 (24년 on the old homepage; the recruitment poster separately says 20년). */
 const STATS = [
   { label: "누적 시공량", to: 60000, suffix: "건+", lead: true },
@@ -97,28 +97,28 @@ export default function Hero() {
 
         {/* ── Copy ── */}
         <div className="relative z-10 -mt-[4.75rem] sm:-mt-28 lg:col-span-7 lg:col-start-1 lg:row-start-1 lg:mt-0 lg:self-center lg:pb-6">
-          {/* old hero: "NST공법 공식홈페이지 | 새집증후군 개선 시공 전문 기술" / "우리가족! 우리아이! 건강 지킴이 (주)엔에스티" */}
+          {/* old hero: "NST공법 공식홈페이지 | 새집증후군 개선 시공 전문 기술" / "우리가족! 우리아이! 건강 지킴이 엔에스티" */}
           <h1
             id="hero-title"
             className="font-display font-extrabold tracking-[-0.03em] text-pine [text-shadow:0_1px_0_rgba(255,255,255,.5),0_0_32px_rgba(246,250,247,.9)]"
           >
-            <span className="rise block text-pretty text-[clamp(1rem,0.9rem+0.6vw,1.3125rem)] font-bold leading-[1.35] text-pine-2" style={delay(0)}>
+            <span className="rise block text-pretty text-[clamp(0.9375rem,0.85rem+0.45vw,1.125rem)] font-bold leading-[1.35] text-pine-2" style={delay(0)}>
               NST공법 공식홈페이지 <span aria-hidden="true" className="text-leaf/60">|</span>
               <span className="sr-only">,</span> <span className="whitespace-nowrap">새집증후군 개선 시공 전문 기술</span>
             </span>
-            <span className="mt-2 block text-[clamp(1.875rem,1rem+3vw,3.375rem)] leading-[1.08] lg:mt-3">
+            <span className="mt-2 block text-[clamp(1.625rem,1rem+2.2vw,2.75rem)] leading-[1.08] lg:mt-3">
               <span className="rise block" style={delay(100)}>
                 우리가족! 우리아이!
               </span>
               <span className="rise block" style={delay(200)}>
-                건강 지킴이 <span className="whitespace-nowrap">(주)엔에스티</span>
+                건강 지킴이 <span className="whitespace-nowrap">엔에스티</span>
               </span>
             </span>
           </h1>
 
           {/* old hero notice (yellow line on knst.co.kr) */}
           <p
-            className="rise mt-6 max-w-[33rem] text-pretty text-[18px] font-medium leading-[1.7] text-ink/85 sm:text-[20px] lg:mt-8 lg:max-w-[min(30rem,calc(40vw-1rem))] lg:text-[1.3125rem] lg:leading-[1.65]"
+            className="rise mt-6 max-w-[33rem] text-pretty text-[16px] font-medium leading-[1.7] text-ink/85 sm:text-[18px] lg:mt-8 lg:max-w-[min(30rem,calc(40vw-1rem))] lg:text-[1.125rem] lg:leading-[1.65]"
             style={delay(300)}
           >
             <a
@@ -182,7 +182,7 @@ export default function Hero() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/img/saejibi.webp" alt="" width={150} height={168} loading="lazy" className="h-8 w-auto" />
-              (주)엔에스티 블로그
+              엔에스티 블로그
               <ArrowUpRight aria-hidden="true" className="size-4 text-leaf" />
               <span className="sr-only">(새 창)</span>
             </a>
@@ -198,7 +198,7 @@ export default function Hero() {
             <span aria-hidden="true" className="pointer-events-none absolute -bottom-10 -right-6 size-28 rounded-full border border-leaf/10" />
 
             <h2 className="relative mb-5 text-[14px] font-bold leading-snug text-pine-2 sm:text-[15px]">
-              (주)엔에스티의 NST공법 시공 실적과 전국 네트워크
+              엔에스티의 NST공법 시공 실적과 전국 네트워크
             </h2>
             <dl className="relative grid grid-cols-2 gap-y-5 sm:grid-cols-[auto_1fr_1fr] sm:gap-x-6 sm:gap-y-0">
               {STATS.map((s, i) => (
@@ -209,8 +209,8 @@ export default function Hero() {
                     "[&_dd]:whitespace-nowrap [&_dd]:font-display [&_dd]:font-extrabold [&_dd]:leading-none [&_dd]:tracking-[-0.035em] [&_dd]:text-pine [&_dd]:tabular-nums",
                     "[&_small]:ml-1 [&_small]:font-sans [&_small]:text-[0.4em] [&_small]:font-bold [&_small]:tracking-normal [&_small]:text-leaf",
                     s.lead
-                      ? "col-span-2 border-b border-pine/10 pb-5 sm:col-span-1 sm:border-b-0 sm:pb-0 [&_dd]:text-[clamp(2.25rem,1.8rem+2vw,3rem)]"
-                      : "[&_dd]:text-[clamp(1.75rem,1.5rem+1.2vw,2.25rem)]",
+                      ? "col-span-2 border-b border-pine/10 pb-5 sm:col-span-1 sm:border-b-0 sm:pb-0 [&_dd]:text-[clamp(2rem,1.6rem+1.6vw,2.5rem)]"
+                      : "[&_dd]:text-[clamp(1.5rem,1.3rem+1vw,2rem)]",
                     i > 0 && "sm:border-l sm:border-pine/10 sm:pl-6",
                     i === 0 && "sm:pr-2",
                     i === 2 && "border-l border-pine/10 pl-5",

@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 /*
  * 문의하기 — old /contact/ verbatim (heading, 문의메일·전화상담·카톡 1:1 채널 https://pf.kakao.com/_ScCkn and the
  * "카카오톡 문의" board that linked to the channel), /directions/ (주소·전화 2회선), fax from the FITI/safety documents
- * (lib/site.ts), "(주)엔에스티 블로그" from the old home page. No form: every action is a tel:/mailto:/KakaoTalk link.
+ * (lib/site.ts), "엔에스티 블로그" from the old home page. No form: every action is a tel:/mailto:/KakaoTalk link.
  */
 
 const PATH = "/contact/";
@@ -174,14 +174,14 @@ export default function ContactPage() {
             <SourceNote>
               사진 속 현수막: “286 전 세대 시공완료! 내 아파트에 숲을 가꾸어 드립니다!”, “실내공기질(새집증후군) 개선을 위한 NST처리공법 적용”, “160 전 세대
               시공으로 친환경 도시생활주택을 추구하는 경성”, “NST처리공법 전세대 적용!!”, “실내 유해공기 제거제 시공(NST-S100)”, “가구,목재 유해물질 방출
-              차단제 시공(NST-S200)”, “주관사 : (주)운암건설 시공사 : (주)엔에스티”
+              차단제 시공(NST-S200)”, “주관사 : (주)운암건설 시공사 : 엔에스티”
             </SourceNote>
           </div>
         </div>
       </Section>
 
       {/* ── 회사 정보 ── */}
-      <Section id="company" tone="white" kicker="(주)엔에스티" title="회사정보">
+      <Section id="company" tone="white" kicker="엔에스티" title="회사정보">
         <div className="grid gap-6 lg:grid-cols-2">
           <address className="not-italic">
             <dl className="divide-y divide-hairline rounded-[1.5rem] border border-hairline bg-air">
@@ -205,7 +205,7 @@ export default function ContactPage() {
             <h3 className={cn(H3, "text-pine")}>사업자 정보</h3>
             <dl className="mt-4 grid grid-cols-[7.5rem_minmax(0,1fr)] gap-x-3 gap-y-2.5 text-[15px] leading-[1.6]">
               <dt className="text-muted-ink">상호</dt>
-              <dd>(주)엔에스티</dd>
+              <dd>엔에스티</dd>
               <dt className="text-muted-ink">대표</dt>
               <dd>{SITE.ceo}</dd>
               <dt className="text-muted-ink">사업자등록번호</dt>
@@ -213,7 +213,7 @@ export default function ContactPage() {
               <dt className="text-muted-ink">블로그</dt>
               <dd>
                 <a href={BLOG} target="_blank" rel="noopener noreferrer" className={cn(LINK, FOCUS, "rounded")}>
-                  (주)엔에스티 블로그<span className="sr-only">(새 창)</span>
+                  엔에스티 블로그<span className="sr-only">(새 창)</span>
                 </a>
               </dd>
             </dl>

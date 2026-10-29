@@ -68,7 +68,7 @@ const GROUPS: { label: string; items: Proof[] }[] = [
             src: "/img/proof-award.webp",
             w: 440,
             h: 576,
-            alt: "제20회 2025 대한민국환경대상 환경제품부문 상패. (주)엔에스티 수상, 2025년 7월 18일, 대한민국환경대상위원회 발행",
+            alt: "제20회 2025 대한민국환경대상 환경제품부문 상패. 엔에스티 수상, 2025년 7월 18일, 대한민국환경대상위원회 발행",
           },
         ],
       },
@@ -185,7 +185,7 @@ const GROUPS: { label: string; items: Proof[] }[] = [
         issuer: "한국세라믹기술원(KICET)",
         ref: "2025-1985",
         date: "시험 2025.06.23 – 06.25",
-        note: "시험 결과(포름알데하이드 농도): 초기 25ppm → 암조건 1·2시간 15ppm, 광조건 1·2시간 10ppm. (주)엔에스티는 이 성적서를 ‘한국세라믹기술원 공인시험을 통한 포름알데하이드 분해 성능 입증’ 자료로 공개하고 있습니다.",
+        note: "시험 결과(포름알데하이드 농도): 초기 25ppm → 암조건 1·2시간 15ppm, 광조건 1·2시간 10ppm. 엔에스티는 이 성적서를 ‘한국세라믹기술원 공인시험을 통한 포름알데하이드 분해 성능 입증’ 자료로 공개하고 있습니다.",
         source: { href: SRC.reports, label: "공인시험성적서 자료" },
         docs: [
           {
@@ -206,7 +206,7 @@ const GROUPS: { label: string; items: Proof[] }[] = [
         issuer: "한국건설생활환경시험연구원(KCL) · KOLAS 인정",
         ref: "CT25-051997K · CT25-051998K",
         date: "발행 2025.07.22",
-        note: "시험기간 2025.06.16 – 07.22. KOLAS 인정 시험기관(ILAC-MRA)이 발행한 엔에스티-에스200 성적서입니다. (주)엔에스티는 KS M 1998:2022 소형챔버법 결과를 ‘NST-S200 코팅 후 톨루엔 100% 감소(불검출), 포름알데히드 94.8% 감소’로 공개하고 있습니다.",
+        note: "시험기간 2025.06.16 – 07.22. KOLAS 인정 시험기관(ILAC-MRA)이 발행한 엔에스티-에스200 성적서입니다. 엔에스티는 KS M 1998:2022 소형챔버법 결과를 ‘NST-S200 코팅 후 톨루엔 100% 감소(불검출), 포름알데히드 94.8% 감소’로 공개하고 있습니다.",
         source: { href: SRC.reports, label: "공인시험성적서 자료" },
         docs: [
           {
@@ -239,7 +239,7 @@ const FAN: Record<number, { rest: string; spread: string }[]> = {
   ],
 };
 
-/* 시공 실적 — the old gallery slide "㈜엔에스티 새집증후군 예방 시공 실적(대형 건설사 전세대)" (image-text part-1 엔에스티8),
+/* 시공 실적 — the old gallery slide "엔에스티 새집증후군 예방 시공 실적(대형 건설사 전세대)" (image-text part-1 엔에스티8),
    same order and wording. Left out: "강서 경성하늘삽 162 전세대" (단지명·세대수 판독 불확실; other boards read 경성하늘샵 160세대). */
 const PROJECTS: { name: string; units: string; all: boolean; client?: string }[] = [
   { name: "오송 힐데스하임", units: "402", all: true, client: "원건설" },
@@ -260,21 +260,21 @@ const GALLERY = [
     w: 1400,
     h: 789,
     alt: "NST-S100·NST-S200·NST-F100 제품 용기와 각 제품 시공 사진을 모은 슬라이드",
-    caption: "㈜엔에스티 친환경 제품 삼총사 (NST-S100, NST-S200, NST-F100)",
+    caption: "엔에스티 친환경 제품 삼총사 (NST-S100, NST-S200, NST-F100)",
   },
   {
     src: "/img/g-2.webp",
     w: 1400,
     h: 789,
     alt: "제20회 2025 대한민국환경대상 환경제품부문 상패와 상장 슬라이드",
-    caption: "㈜엔에스티, 「2025년 대한민국환경대상」 ‘환경제품부문’ 수상",
+    caption: "엔에스티, 「2025년 대한민국환경대상」 ‘환경제품부문’ 수상",
   },
   {
     src: "/img/g-3.webp",
     w: 1280,
     h: 720,
     alt: "대형 건설사 신축 아파트 단지와 시공 현수막 사진을 모은 슬라이드",
-    caption: "㈜엔에스티 새집증후군 예방 시공 실적(대형 건설사 전세대)",
+    caption: "엔에스티 새집증후군 예방 시공 실적(대형 건설사 전세대)",
   },
 ];
 
@@ -293,7 +293,7 @@ const REGISTRY: { t: string; d: string }[] = [
   { t: "공장등록", d: "청주산업단지관리공단 공장등록증명" },
   { t: "실내환경관리사 교육 수료", d: "제4회 실내환경 관리사 교육 · 2011.10.06 · 한국실내환경학회" },
   { t: "환경부장관 표창 제44754호", d: "사업장폐기물 관리 기여 · 2023.09.15 (개인 표창)" },
-  { t: "기업부설연구소 (주)엔에스티연구소", d: "2025.09 설립" },
+  { t: "기업부설연구소 엔에스티연구소", d: "2025.09 설립" },
 ];
 
 const TIMELINE = [
@@ -303,7 +303,7 @@ const TIMELINE = [
   { d: "2014-03", y: "2014", m: "03", t: "조달청 경쟁입찰 참가자격 등록" },
   { d: "2025-07", y: "2025", m: "07", t: "대한민국환경대상 환경제품 부문 본상" },
   { d: "2025-08", y: "2025", m: "08", t: "빛이 없어도 유해물질을 제거하는 NST-S100 리뉴얼 출시" },
-  { d: "2025-09", y: "2025", m: "09", t: "기업부설연구소 (주)엔에스티연구소 설립" },
+  { d: "2025-09", y: "2025", m: "09", t: "기업부설연구소 엔에스티연구소 설립" },
   { d: "2026-01", y: "2026", m: "01", t: "‘하이앤드 듀얼’ 신제품 3종 출시" },
 ];
 
@@ -522,7 +522,7 @@ export default function Proof() {
             {/* old home: "공인기관 및 정부 시스템이 검증한 '안전한 기술'입니다." + the 기술현황 pointer */}
             <h2
               id="proof-title"
-              className="mt-4 text-balance font-display text-[clamp(1.75rem,1.25rem+1.7vw,2.5rem)] font-extrabold leading-[1.18] tracking-[-0.035em] text-pine"
+              className="mt-4 text-balance font-display text-[clamp(1.5rem,1.15rem+1.2vw,2rem)] font-extrabold leading-[1.18] tracking-[-0.035em] text-pine"
             >
               공인기관 및 정부 시스템이 검증한{" "}
               <span className="whitespace-nowrap">
@@ -563,7 +563,7 @@ export default function Proof() {
               </p>
             </blockquote>
             <figcaption className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-[15px] leading-[1.6] text-muted-ink">
-              <span>(주)엔에스티 칼럼 「공인시험성적서 vs 간이측정」</span>
+              <span>엔에스티 칼럼 「공인시험성적서 vs 간이측정」</span>
               <a
                 href={SRC.reports}
                 className={cn("inline-flex min-h-11 items-center gap-1 rounded-full px-1 font-semibold text-trust hover:underline", FOCUS)}
@@ -598,7 +598,7 @@ export default function Proof() {
             <h3 className="font-display text-[1.25rem] font-bold leading-[1.3] tracking-[-0.02em] text-pine sm:text-[1.375rem]">
               그 밖의 등록 · 인증
             </h3>
-            <p className="text-[14px] text-muted-ink">출처: (주)엔에스티 「증명서로 보는 NST공법」·연혁</p>
+            <p className="text-[14px] text-muted-ink">출처: 엔에스티 「증명서로 보는 NST공법」·연혁</p>
           </div>
           <dl className="grid sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-4 lg:gap-x-6">
             {REGISTRY.map((r) => (
@@ -658,7 +658,7 @@ export default function Proof() {
 
           {/* old gallery slide 엔에스티8, as text (same order and wording) */}
           <div className="mt-10 lg:col-span-6 lg:col-start-7 lg:mt-0 lg:self-center">
-            <h4 className="text-[14px] font-bold tracking-[0.04em] text-mint">㈜엔에스티 새집증후군 예방 시공 실적(대형 건설사 전세대)</h4>
+            <h4 className="text-[14px] font-bold tracking-[0.04em] text-mint">엔에스티 새집증후군 예방 시공 실적(대형 건설사 전세대)</h4>
             <dl className="mt-3 divide-y divide-white/15 border-y border-white/15">
               {PROJECTS.map((r, i) => (
                 <div key={r.name} className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-4 py-3.5">
@@ -697,7 +697,7 @@ export default function Proof() {
             <div>
               <p className="text-[13px] font-semibold uppercase tracking-[0.22em] text-pine-2">OUR GALLERY</p>
               <h3 className="mt-2 font-display text-[clamp(1.375rem,1.1rem+1vw,1.75rem)] font-extrabold leading-[1.2] tracking-[-0.03em] text-pine">
-                (주)엔에스티에 대해서 더 알아보세요
+                엔에스티에 대해서 더 알아보세요
               </h3>
             </div>
             <a
@@ -752,7 +752,7 @@ export default function Proof() {
           </div>
           <div
             role="region"
-            aria-label="(주)엔에스티 연혁"
+            aria-label="엔에스티 연혁"
             tabIndex={0}
             className="-mx-4 mt-8 overflow-x-auto overscroll-x-contain px-4 pb-4 outline-none [scrollbar-width:thin] focus-visible:ring-2 focus-visible:ring-trust sm:-mx-6 sm:px-6 lg:mx-0 lg:overflow-visible lg:px-0"
           >

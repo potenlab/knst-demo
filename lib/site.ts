@@ -1,15 +1,15 @@
 /** Single source of truth for SEO / GEO metadata. Facts come from knst.co.kr (see docs/reference/content.md). */
 export const SITE = {
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://knst.co.kr").replace(/\/$/, ""),
-  name: "(주)엔에스티",
+  name: "엔에스티",
   nameEn: "NST Co., Ltd.",
   brand: "NST공법",
-  title: "새집증후군 시공 NST공법 | VOCs·포름알데히드 3단계 개선 | (주)엔에스티",
-  shortTitle: "새집증후군 시공 NST공법 | (주)엔에스티",
+  title: "새집증후군 시공 NST공법 | VOCs·포름알데히드 3단계 개선 | 엔에스티",
+  shortTitle: "새집증후군 시공 NST공법 | 엔에스티",
   /* Old-site wording: home intro sentence + the home counters (누적 시공량 60,000건+ / 전국 지점 30개+ / 업력 24년)
      + "대형건설사 전세대 일괄시공 실적" (새집증후군3 infographic). */
   description:
-    "NST공법은 휘발성유기화합물(VOCs), 포름알데하이드 등 실내공간에서 보이지 않는 유해물질을 차단·분해·흡착 제거해 주는 새집증후군 개선 시공 기술입니다. 누적 시공량 60,000건+, 전국 지점 30개+, 대형건설사 전세대 일괄시공 실적의 (주)엔에스티.",
+    "NST공법은 휘발성유기화합물(VOCs), 포름알데하이드 등 실내공간에서 보이지 않는 유해물질을 차단·분해·흡착 제거해 주는 새집증후군 개선 시공 기술입니다. 누적 시공량 60,000건+, 전국 지점 30개+, 대형건설사 전세대 일괄시공 실적의 엔에스티.",
   keywords: [
     "새집증후군",
     "새집증후군 시공",
@@ -30,7 +30,7 @@ export const SITE = {
   email: "isnst@naver.com",
   /** 카카오톡 채널 (1:1 채팅) — client request 2026-10-29 */
   kakao: "https://pf.kakao.com/_ScCkn",
-  /** 구 사이트 히어로의 "(주)엔에스티 블로그" 버튼 */
+  /** 구 사이트 히어로의 "엔에스티 블로그" 버튼 */
   naverBlog: "https://blog.naver.com/nst-pro",
   address: {
     streetAddress: "공단로 134 세중테크노밸리 1408호",

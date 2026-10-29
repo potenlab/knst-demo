@@ -140,7 +140,7 @@ export default function FinalCTA() {
 
           <h2
             id="contact-title"
-            className="mt-6 font-display text-[clamp(1.875rem,1.2rem+3vw,2.75rem)] font-extrabold leading-[1.1] tracking-[-0.035em] lg:text-[clamp(2.25rem,3.6vw,3rem)] xl:text-[3rem]"
+            className="mt-6 font-display text-[clamp(1.625rem,1.1rem+2vw,2.25rem)] font-extrabold leading-[1.1] tracking-[-0.035em] lg:text-[2.25rem]"
           >
             <span className={`block ${REVEAL}`}>새집증후군 예방!</span>
             <span className={`block ${REVEAL}`}>
@@ -148,7 +148,7 @@ export default function FinalCTA() {
               <span className="whitespace-nowrap">고민하지 마세요.</span>
             </span>
             <span className={`mt-3 block text-mint ${REVEAL}`}>
-              <span className="whitespace-nowrap">(주)엔에스티가</span> 있습니다.
+              <span className="whitespace-nowrap">엔에스티가</span> 있습니다.
             </span>
           </h2>
 
@@ -180,7 +180,7 @@ export default function FinalCTA() {
             </a>
           </div>
 
-          <ul aria-label="(주)엔에스티 시공 안내" className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-7">
+          <ul aria-label="엔에스티 시공 안내" className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-7">
             {BENEFITS.map((b) => (
               <li key={b} className="flex items-center gap-2.5 text-[16px] font-medium text-white/90">
                 <span
@@ -254,7 +254,7 @@ export default function FinalCTA() {
               <div className="mt-3 flex flex-wrap items-center gap-x-6 gap-y-4">
                 <a
                   href={`tel:${PHONE_MAIN.tel}`}
-                  className="group relative whitespace-nowrap rounded-lg font-display text-[clamp(2rem,1.2rem+3.4vw,3rem)] font-extrabold leading-[1.15] tracking-[-0.03em] tabular-nums text-white outline-none focus-visible:ring-2 focus-visible:ring-mint focus-visible:ring-offset-4 focus-visible:ring-offset-pine lg:text-[clamp(2.5rem,4vw,3.5rem)]"
+                  className="group relative whitespace-nowrap rounded-lg font-display text-[clamp(1.75rem,1.1rem+2.4vw,2.5rem)] font-extrabold leading-[1.15] tracking-[-0.03em] tabular-nums text-white outline-none focus-visible:ring-2 focus-visible:ring-mint focus-visible:ring-offset-4 focus-visible:ring-offset-pine lg:text-[clamp(2.25rem,3vw,2.75rem)]"
                 >
                   <span className="sr-only">전화 걸기 </span>
                   {PHONE_MAIN.display}

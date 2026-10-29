@@ -233,7 +233,7 @@ export default function FAQ() {
             </p>
             <h2
               id="faq-title"
-              className="mt-4 font-display text-[clamp(1.75rem,1.25rem+1.7vw,2.5rem)] font-extrabold leading-[1.1] tracking-[-0.035em] text-pine"
+              className="mt-4 font-display text-[clamp(1.5rem,1.15rem+1.2vw,2rem)] font-extrabold leading-[1.1] tracking-[-0.035em] text-pine"
             >
               자주 묻는
               <br />

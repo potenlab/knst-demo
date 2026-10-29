@@ -27,7 +27,7 @@ export default async function AdminLoginPage() {
           </span>
           <div className="leading-tight">
             <p className="text-[12px] font-semibold tracking-[0.18em] text-leaf">NST CMS</p>
-            <p className="font-display text-[17px] font-bold text-pine">(주)엔에스티</p>
+            <p className="font-display text-[17px] font-bold text-pine">엔에스티</p>
           </div>
         </div>
 

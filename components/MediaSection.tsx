@@ -118,11 +118,11 @@ export default function MediaSection() {
               <span className="absolute inset-0 rounded-full border border-mint/50" />
               <span className="size-1.5 rounded-full bg-mint" />
             </span>
-            (주)엔에스티의 새집증후군 예방 시공
+            엔에스티의 새집증후군 예방 시공
           </p>
           <h2
             id="method-title"
-            className="mt-5 text-balance font-display text-[clamp(1.75rem,1.25rem+1.7vw,2.5rem)] font-extrabold leading-[1.22] tracking-[-0.03em]"
+            className="mt-5 text-balance font-display text-[clamp(1.5rem,1.15rem+1.2vw,2rem)] font-extrabold leading-[1.22] tracking-[-0.03em]"
           >
             새집증후군의 원인을 근본적으로 해결하고 가족의{" "}
             <span className="whitespace-nowrap">
@@ -237,7 +237,7 @@ export default function MediaSection() {
           </div>
 
           <p className="mt-6 max-w-[34rem] text-[15px] leading-[1.7] text-white/60 sm:text-[16px] lg:mt-8">
-            (주)엔에스티 기술력이 어떻게 실내공간을 변화시키고 우리가족 일상에 스며드는지 영상을 통해 확인하실 수 있습니다.
+            엔에스티 기술력이 어떻게 실내공간을 변화시키고 우리가족 일상에 스며드는지 영상을 통해 확인하실 수 있습니다.
           </p>
         </div>
 

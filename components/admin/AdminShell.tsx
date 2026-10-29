@@ -21,7 +21,7 @@ export default function AdminShell({ children, wide = false }: { children: React
           >
             <span className="flex items-center rounded-full bg-white p-1 shadow-[0_8px_20px_-12px_rgba(0,0,0,.7)]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/img/logo-white.webp" alt="(주)엔에스티" width={300} height={300} className="size-9 rounded-full object-contain" />
+              <img src="/img/logo-white.webp" alt="엔에스티" width={300} height={300} className="size-9 rounded-full object-contain" />
             </span>
             <span className="flex flex-col leading-tight">
               <span className="text-[11px] font-semibold tracking-[0.18em] text-glow">NST CMS</span>
