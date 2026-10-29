@@ -1,7 +1,7 @@
 /**
  * Static company / product / support pages (rebuilt from the old knst.co.kr pages as real HTML).
- * `STATIC_PAGES` is meant for app/sitemap.ts; `PAGE_GROUPS` drives the header "더보기" menu,
- * the mobile sheet and the footer so every page list stays in one place.
+ * `STATIC_PAGES` is meant for app/sitemap.ts; `PAGE_GROUPS` drives the footer.
+ * The header preserves the original website's menu order separately.
  */
 
 export type ChangeFreq = "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
